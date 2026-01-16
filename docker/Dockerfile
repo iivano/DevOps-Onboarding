@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 # Install deps from prebuilt wheels (no gcc needed here)
-COPY --from=builder /wheels /wheels
+COPY --from=builder /wheelz /wheels
 RUN pip install --no-cache-dir /wheels/*
 
 # Copy app code
